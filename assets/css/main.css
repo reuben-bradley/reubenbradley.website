@@ -518,6 +518,7 @@ button,
   text-align: center;
   transform-origin: 50% 50%;
   transform: rotateX(0deg);
+  transform: rotateY(0deg);
   transition: opacity 1s ease, transform 1s ease; }
   #main .avatar {
     position: relative;
@@ -550,6 +551,73 @@ button,
   body.is-loading #main {
     opacity: 0;
     transform: rotateX(15deg); }
+  #main.is-hiding {
+    transform: rotateY(90deg); }
+
+/* Games */
+#games {
+  position: relative;
+  max-width: 100%;
+  min-width: 27em;
+  padding: 4.5em 3em 3em 3em ;
+  background: #ffffff;
+  border-radius: 4px;
+  cursor: default;
+  opacity: 0.95;
+  text-align: center;
+  transform-origin: 50% 50%;
+  transform: rotateX(0deg);
+  transform: rotateY(0deg);
+  transition: opacity 1s ease, transform 1s ease; }
+  @media screen and (max-width: 480px) {
+    #games {
+      min-width: 0;
+      width: 100%;
+      padding: 4em 2em 2.5em 2em ; } }
+  body.is-loading #games {
+    opacity: 0;
+    transform: rotateX(15deg); }
+  #games.is-hiding {
+    transform: rotateY(90deg); }
+  #games header.icons a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 100%;
+    border: solid 1px #c8cccf;
+    font-size: 0.7rem;
+    line-height: 3.75rem;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    text-align: center;
+    text-indent: 3.75rem;
+    white-space: nowrap; }
+    #games header.icons a:before {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: none !important; }
+    #games header.icons a:before {
+      color: #ffffff;
+      text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf; }
+    #games header.icons a:hover:before {
+      text-shadow: 1.25px 0px 0px #e95420, -1.25px 0px 0px #e95420, 0px 1.25px 0px #e95420, 0px -1.25px 0px #e95420; }
+    #games header.icons a:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      font-size: 1.85rem;
+      line-height: inherit;
+      text-align: center;
+      text-indent: 0; }
+    #games header.icons a:hover {
+      border-color: #e95420; }
 
 /* Footer */
 #footer {
