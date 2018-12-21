@@ -10,26 +10,28 @@ if ('addEventListener' in window) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             main.classList.add('is-hiding');
-            games.classList.add('is-hiding');
+            games.classList.add('is-showing');
             setTimeout(function() {
                 main.style.display = 'none';
                 games.style.display = 'block';
                 setTimeout(function() {
-                    games.classList.remove('is-hiding');
+                    main.classList.remove('is-hiding');
+                    games.classList.remove('is-showing');
                 }, 100);
-            }, 1000);
+            }, 250);
         });
         returnLink.addEventListener('click', function(e) {
             e.preventDefault();
             games.classList.add('is-hiding');
-            main.classList.add('is-hiding');
+            main.classList.add('is-showing');
             setTimeout(function() {
                 games.style.display = 'none';
                 main.style.display = 'block';
                 setTimeout(function() {
-                    main.classList.remove('is-hiding');
+                    games.classList.remove('is-hiding');
+                    main.classList.remove('is-showing');
                 }, 100);
-            }, 1000);
+            }, 250);
         });
     });
 }

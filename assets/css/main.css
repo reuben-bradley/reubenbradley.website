@@ -377,7 +377,7 @@ ul {
         height: 3.75em;
         border-radius: 100%;
         border: solid 1px #c8cccf;
-        line-height: 3.75em;
+        line-height: 3.5em;
         overflow: hidden;
         text-align: center;
         text-indent: 3.75em;
@@ -519,7 +519,7 @@ button,
   transform-origin: 50% 50%;
   transform: rotateX(0deg);
   transform: rotateY(0deg);
-  transition: opacity 1s ease, transform 1s ease; }
+  transition: opacity 1s ease, transform 0.25s ease; }
   #main .avatar {
     position: relative;
     display: block;
@@ -553,6 +553,8 @@ button,
     transform: rotateX(15deg); }
   #main.is-hiding {
     transform: rotateY(90deg); }
+  #main.is-showing {
+    transform: rotateY(-90deg); }
 
 /* Games */
 #games {
@@ -568,7 +570,7 @@ button,
   transform-origin: 50% 50%;
   transform: rotateX(0deg);
   transform: rotateY(0deg);
-  transition: opacity 1s ease, transform 1s ease; }
+  transition: opacity 1s ease, transform 0.25s ease; }
   @media screen and (max-width: 480px) {
     #games {
       min-width: 0;
@@ -579,45 +581,29 @@ button,
     transform: rotateX(15deg); }
   #games.is-hiding {
     transform: rotateY(90deg); }
-  #games header.icons a {
-    text-decoration: none;
-    position: relative;
-    display: block;
-    width: 3.75rem;
-    height: 3.75rem;
-    border-radius: 100%;
-    border: solid 1px #c8cccf;
-    font-size: 0.7rem;
-    line-height: 3.75rem;
-    margin: 0 auto 1.5rem;
-    overflow: hidden;
-    text-align: center;
-    text-indent: 3.75rem;
-    white-space: nowrap; }
-    #games header.icons a:before {
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-transform: none !important; }
-    #games header.icons a:before {
-      color: #ffffff;
-      text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf, 0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf; }
-    #games header.icons a:hover:before {
-      text-shadow: 1.25px 0px 0px #e95420, -1.25px 0px 0px #e95420, 0px 1.25px 0px #e95420, 0px -1.25px 0px #e95420; }
-    #games header.icons a:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: inherit;
-      height: inherit;
-      font-size: 1.85rem;
-      line-height: inherit;
+  #games.is-showing {
+    transform: rotateY(-90deg); }
+  #games header {
+    margin-bottom: 2em; }
+  #games p.games-links {
+    margin-bottom: 0;
+    margin-top: 2em;
+    text-align: right; }
+  #games .game-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #games .game-list li {
+      margin: 3em 1em;
+      padding: 0;
       text-align: center;
-      text-indent: 0; }
-    #games header.icons a:hover {
-      border-color: #e95420; }
+      width: 200px; }
 
 /* Footer */
 #footer {
@@ -649,10 +635,10 @@ button,
   display: -ms-flex;
   display: -ms-flexbox;
   display: flex;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -664,6 +650,8 @@ button,
   perspective: 1000px;
   position: relative;
   min-height: 100%;
+  max-width: 44em;
+  margin: 0 auto;
   padding: 1.5em;
   z-index: 2; }
   #wrapper > * {

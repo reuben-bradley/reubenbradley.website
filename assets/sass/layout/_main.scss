@@ -27,7 +27,7 @@
 		@include vendor('transform', 'rotateY(0deg)');
 		@include vendor('transition', (
 			'opacity #{_duration(main)} ease',
-			'transform #{_duration(main)} ease'
+			'transform #{_duration(games)} ease'
 		));
 
 		.avatar {
@@ -77,4 +77,8 @@
 		&.is-hiding {
 			@include vendor('transform', 'rotateY(90deg)');
 		}
+		&.is-showing {
+			@include vendor('transform', 'rotateY(-90deg)');
+		}
+
 	}
