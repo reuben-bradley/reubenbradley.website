@@ -12,11 +12,19 @@
 
 	#footer {
 		@include vendor('align-self', 'flex-end');
+		@include vendor('transition', (
+			'transform #{_duration(games)} ease'
+		));
 		width: 100%;
 		padding: _size(element-margin) 0 0 0;
 		color: rgba(255,255,255,0.75);
 		cursor: default;
+		margin-top: auto;
 		text-align: center;
+
+		.flipped > & {
+			@include vendor('transform', 'rotateY(180deg)');
+		}
 
 		.copyright {
 			margin: 0;

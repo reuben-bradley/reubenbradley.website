@@ -8,12 +8,11 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-/* Main */
-
-	#main {
-		position: relative;
-		max-width: 100%;
-		min-width: 27em;
+/* All page sections */
+	#main, #games {
+		backface-visibility: hidden;
+		position: absolute;
+		width: calc(100% - #{_size(element-margin) * 2});
 		@include padding(4.5em, 3em);
 
 		background: _palette(bg);
@@ -24,6 +23,19 @@
 
 		@include vendor('transform-origin', '50% 50%');
 		@include vendor('transform', 'rotateX(0deg)');
+
+		@include breakpoint(xsmall) {
+			min-width: 0;
+			width: calc(100% - #{_size(element-margin)});
+			@include padding(4em, 2em);
+		}
+	}
+
+/* Main */
+
+	#main {
+		z-index: 10;
+		@include vendor('transform', 'rotateY(0deg)');
 		@include vendor('transition', (
 			'opacity #{_duration(main)} ease',
 			'transform #{_duration(main)} ease'
@@ -56,11 +68,11 @@
 		}
 
 		@include breakpoint(xsmall) {
-			min-width: 0;
-			width: 100%;
-			@include padding(4em, 2em);
-
 			.avatar {
+				img {
+					max-width: 75%;
+				}
+
 				&:before {
 					left: -2em;
 					width: calc(100% + 4em);
@@ -71,5 +83,52 @@
 		body.is-loading & {
 			opacity: 0;
 			@include vendor('transform', 'rotateX(15deg)');
+		}
+
+	}
+
+/* Games */
+	#games {
+		z-index: 5;
+		@include vendor('transform', 'rotateY(-180deg)');
+
+		header {
+			margin-bottom: 2em;
+		}
+
+		p.games-links {
+			margin-bottom: 0;
+			margin-top: 2em;
+			text-align: right;
+		}
+
+		.game-list {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 3em 1em;
+				padding: 0;
+				text-align: center;
+				width: 200px;
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			header {
+				margin-bottom: 1em;
+			}
+
+			.game-list li {
+				margin: 1.5em 1em;
+			}
+
+			p.games-links {
+				margin-top: 1em;
+			}
 		}
 	}

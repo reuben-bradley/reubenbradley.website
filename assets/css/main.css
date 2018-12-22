@@ -377,7 +377,7 @@ ul {
         height: 3.75em;
         border-radius: 100%;
         border: solid 1px #c8cccf;
-        line-height: 3.75em;
+        line-height: 3.5em;
         overflow: hidden;
         text-align: center;
         text-indent: 3.75em;
@@ -505,11 +505,12 @@ button,
     pointer-events: none;
     opacity: 0.5; }
 
-/* Main */
-#main {
-  position: relative;
-  max-width: 100%;
-  min-width: 27em;
+/* All page sections */
+#main, #games {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: calc(100% - 3em);
   padding: 4.5em 3em 3em 3em ;
   background: #ffffff;
   border-radius: 4px;
@@ -517,7 +518,17 @@ button,
   opacity: 0.95;
   text-align: center;
   transform-origin: 50% 50%;
-  transform: rotateX(0deg);
+  transform: rotateX(0deg); }
+  @media screen and (max-width: 480px) {
+    #main, #games {
+      min-width: 0;
+      width: calc(100% - 1.5em);
+      padding: 4em 2em 2.5em 2em ; } }
+
+/* Main */
+#main {
+  z-index: 10;
+  transform: rotateY(0deg);
   transition: opacity 1s ease, transform 1s ease; }
   #main .avatar {
     position: relative;
@@ -540,27 +551,62 @@ button,
       z-index: -1;
       background: #c8cccf; }
   @media screen and (max-width: 480px) {
-    #main {
-      min-width: 0;
-      width: 100%;
-      padding: 4em 2em 2.5em 2em ; }
-      #main .avatar:before {
-        left: -2em;
-        width: calc(100% + 4em); } }
+    #main .avatar img {
+      max-width: 75%; }
+    #main .avatar:before {
+      left: -2em;
+      width: calc(100% + 4em); } }
   body.is-loading #main {
     opacity: 0;
     transform: rotateX(15deg); }
+
+/* Games */
+#games {
+  z-index: 5;
+  transform: rotateY(-180deg); }
+  #games header {
+    margin-bottom: 2em; }
+  #games p.games-links {
+    margin-bottom: 0;
+    margin-top: 2em;
+    text-align: right; }
+  #games .game-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #games .game-list li {
+      margin: 3em 1em;
+      padding: 0;
+      text-align: center;
+      width: 200px; }
+  @media screen and (max-width: 480px) {
+    #games header {
+      margin-bottom: 1em; }
+    #games .game-list li {
+      margin: 1.5em 1em; }
+    #games p.games-links {
+      margin-top: 1em; } }
 
 /* Footer */
 #footer {
   -ms-align-self: -ms-flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  transition: transform 0.5s ease;
   width: 100%;
   padding: 1.5em 0 0 0;
   color: rgba(255, 255, 255, 0.75);
   cursor: default;
+  margin-top: auto;
   text-align: center; }
+  .flipped > #footer {
+    transform: rotateY(180deg); }
   #footer .copyright {
     margin: 0;
     padding: 0;
@@ -581,14 +627,14 @@ button,
   display: -ms-flex;
   display: -ms-flexbox;
   display: flex;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -596,15 +642,25 @@ button,
   perspective: 1000px;
   position: relative;
   min-height: 100%;
+  min-width: 27em;
+  max-width: 45em;
+  margin: 0 auto;
   padding: 1.5em;
-  z-index: 2; }
-  #wrapper > * {
-    z-index: 1; }
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: rotateY(0);
+  transition: transform 0.5s ease; }
+  #wrapper.flipped {
+    transform: rotateY(180deg); }
   #wrapper:before {
     content: '';
     display: block; }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 480px) {
     #wrapper {
+      -moz-justify-content: -moz-flex-start;
+      -ms-justify-content: -ms-flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
       padding: 0.75em; } }
   body.is-ie #wrapper {
     height: 100%; }
