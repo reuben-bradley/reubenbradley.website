@@ -39,6 +39,7 @@
 		}
 
 		@include breakpoint(xsmall) {
+			@include vendor('justify-content', 'flex-start');
 			padding: (_size(element-margin) * 0.5);
 		}
 

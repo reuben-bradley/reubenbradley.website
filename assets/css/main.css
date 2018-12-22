@@ -551,6 +551,8 @@ button,
       z-index: -1;
       background: #c8cccf; }
   @media screen and (max-width: 480px) {
+    #main .avatar img {
+      max-width: 75%; }
     #main .avatar:before {
       left: -2em;
       width: calc(100% + 4em); } }
@@ -583,6 +585,13 @@ button,
       padding: 0;
       text-align: center;
       width: 200px; }
+  @media screen and (max-width: 480px) {
+    #games header {
+      margin-bottom: 1em; }
+    #games .game-list li {
+      margin: 1.5em 1em; }
+    #games p.games-links {
+      margin-top: 1em; } }
 
 /* Footer */
 #footer {
@@ -648,6 +657,10 @@ button,
     display: block; }
   @media screen and (max-width: 480px) {
     #wrapper {
+      -moz-justify-content: -moz-flex-start;
+      -ms-justify-content: -ms-flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
       padding: 0.75em; } }
   body.is-ie #wrapper {
     height: 100%; }

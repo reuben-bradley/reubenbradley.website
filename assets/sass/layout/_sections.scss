@@ -69,6 +69,10 @@
 
 		@include breakpoint(xsmall) {
 			.avatar {
+				img {
+					max-width: 75%;
+				}
+
 				&:before {
 					left: -2em;
 					width: calc(100% + 4em);
@@ -111,6 +115,20 @@
 				padding: 0;
 				text-align: center;
 				width: 200px;
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			header {
+				margin-bottom: 1em;
+			}
+
+			.game-list li {
+				margin: 1.5em 1em;
+			}
+
+			p.games-links {
+				margin-top: 1em;
 			}
 		}
 	}
