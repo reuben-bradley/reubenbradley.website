@@ -13,18 +13,24 @@
 	#wrapper {
 		@include vendor('display', 'flex');
 		@include vendor('align-items', 'stretch');
-		@include vendor('justify-content', 'space-between');
+		@include vendor('justify-content', 'center');
 		@include vendor('flex-direction', 'column');
 		@include vendor('perspective', '1000px');
 		position: relative;
 		min-height: 100%;
-		max-width: 44em;
+		min-width: 27em;
+		max-width: 45em;
 		margin: 0 auto;
 		padding: _size(element-margin);
 		z-index: 2;
+		transform-style: preserve-3d;
+		@include vendor('transform', 'rotateY(0)');
+		@include vendor('transition', (
+			'transform #{_duration(games)} ease'
+		));
 
-		> * {
-			z-index: 1;
+		&.flipped {
+			@include vendor('transform', 'rotateY(180deg)');
 		}
 
 		&:before {
@@ -32,7 +38,7 @@
 			display: block;
 		}
 
-		@include breakpoint(xxsmall) {
+		@include breakpoint(xsmall) {
 			padding: (_size(element-margin) * 0.5);
 		}
 

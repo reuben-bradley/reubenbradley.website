@@ -11,9 +11,9 @@
 /* Main */
 
 	#main {
-		position: relative;
-		max-width: 100%;
-		min-width: 27em;
+		backface-visibility: hidden;
+		position: absolute;
+		width: calc(100% - #{_size(element-margin) * 2});
 		@include padding(4.5em, 3em);
 
 		background: _palette(bg);
@@ -21,13 +21,14 @@
 		cursor: default;
 		opacity: 0.95;
 		text-align: center;
+		z-index: 10;
 
 		@include vendor('transform-origin', '50% 50%');
 		@include vendor('transform', 'rotateX(0deg)');
 		@include vendor('transform', 'rotateY(0deg)');
 		@include vendor('transition', (
 			'opacity #{_duration(main)} ease',
-			'transform #{_duration(games)} ease'
+			'transform #{_duration(main)} ease'
 		));
 
 		.avatar {
@@ -58,7 +59,7 @@
 
 		@include breakpoint(xsmall) {
 			min-width: 0;
-			width: 100%;
+			width: calc(100% - #{_size(element-margin)});
 			@include padding(4em, 2em);
 
 			.avatar {

@@ -507,19 +507,21 @@ button,
 
 /* Main */
 #main {
-  position: relative;
-  max-width: 100%;
-  min-width: 27em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: calc(100% - 3em);
   padding: 4.5em 3em 3em 3em ;
   background: #ffffff;
   border-radius: 4px;
   cursor: default;
   opacity: 0.95;
   text-align: center;
+  z-index: 10;
   transform-origin: 50% 50%;
   transform: rotateX(0deg);
   transform: rotateY(0deg);
-  transition: opacity 1s ease, transform 0.25s ease; }
+  transition: opacity 1s ease, transform 1s ease; }
   #main .avatar {
     position: relative;
     display: block;
@@ -543,7 +545,7 @@ button,
   @media screen and (max-width: 480px) {
     #main {
       min-width: 0;
-      width: 100%;
+      width: calc(100% - 1.5em);
       padding: 4em 2em 2.5em 2em ; }
       #main .avatar:before {
         left: -2em;
@@ -558,23 +560,25 @@ button,
 
 /* Games */
 #games {
-  position: relative;
-  max-width: 100%;
-  min-width: 27em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: calc(100% - 3em);
   padding: 4.5em 3em 3em 3em ;
   background: #ffffff;
   border-radius: 4px;
   cursor: default;
   opacity: 0.95;
   text-align: center;
+  z-index: 5;
   transform-origin: 50% 50%;
   transform: rotateX(0deg);
-  transform: rotateY(0deg);
-  transition: opacity 1s ease, transform 0.25s ease; }
+  transform: rotateY(-180deg);
+  transition: opacity 1s ease, transform 0.5s ease; }
   @media screen and (max-width: 480px) {
     #games {
       min-width: 0;
-      width: 100%;
+      width: calc(100% - 1.5em);
       padding: 4em 2em 2.5em 2em ; } }
   body.is-loading #games {
     opacity: 0;
@@ -610,11 +614,15 @@ button,
   -ms-align-self: -ms-flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  transition: transform 0.5s ease;
   width: 100%;
   padding: 1.5em 0 0 0;
   color: rgba(255, 255, 255, 0.75);
   cursor: default;
+  margin-top: auto;
   text-align: center; }
+  .flipped > #footer {
+    transform: rotateY(180deg); }
   #footer .copyright {
     margin: 0;
     padding: 0;
@@ -639,10 +647,10 @@ button,
   -ms-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -650,16 +658,20 @@ button,
   perspective: 1000px;
   position: relative;
   min-height: 100%;
-  max-width: 44em;
+  min-width: 27em;
+  max-width: 45em;
   margin: 0 auto;
   padding: 1.5em;
-  z-index: 2; }
-  #wrapper > * {
-    z-index: 1; }
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: rotateY(0);
+  transition: transform 0.5s ease; }
+  #wrapper.flipped {
+    transform: rotateY(180deg); }
   #wrapper:before {
     content: '';
     display: block; }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 480px) {
     #wrapper {
       padding: 0.75em; } }
   body.is-ie #wrapper {
