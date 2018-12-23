@@ -11,8 +11,9 @@
 /* All page sections */
 	#main, #games {
 		backface-visibility: hidden;
-		position: absolute;
-		width: calc(100% - #{_size(element-margin) * 2});
+		margin-bottom: auto;
+		margin-top: auto;
+		width: 100%;
 		@include padding(4.5em, 3em);
 
 		background: _palette(bg);
@@ -26,7 +27,6 @@
 
 		@include breakpoint(xsmall) {
 			min-width: 0;
-			width: calc(100% - #{_size(element-margin)});
 			@include padding(4em, 2em);
 		}
 	}
@@ -89,6 +89,7 @@
 
 /* Games */
 	#games {
+		display: none;
 		z-index: 5;
 		@include vendor('transform', 'rotateY(-180deg)');
 
@@ -111,10 +112,15 @@
 			padding: 0;
 
 			li {
+				line-height: 1.4em;
 				margin: 3em 1em;
 				padding: 0;
 				text-align: center;
-				width: 200px;
+				width: 125px;
+			}
+
+			img {
+				max-width: 100%;
 			}
 		}
 
