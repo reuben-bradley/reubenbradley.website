@@ -1,4 +1,6 @@
-Source code for my professional site.  Based off the template "Identity" by HTML5 UP
+Source code for my professional site.
+
+Based off the template "Strata" by HTML5 UP
 (html5up.net | @ajlkn)
 
 Credits:
@@ -7,10 +9,8 @@ Credits:
 		Unsplash (unsplash.com)
 
 	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
+		Font Awesome (fontawesome.io)
 
 	Other:
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		CSS3 Pie (css3pie.com)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+		jQuery (jquery.com)
+		Responsive Tools (github.com/ajlkn/responsive-tools)
