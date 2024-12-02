@@ -14,3 +14,5 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+		Webpack config (https://github.com/antmelnyk/simple_webpack_boilerplate)
+		Postcss config (https://github.com/antmelnyk/simple_webpack_boilerplate)
