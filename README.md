@@ -5,14 +5,12 @@ Based off the template "Strata" by HTML5 UP
 
 Credits:
 
-	Images:
-		Unsplash (unsplash.com)
+    Images:
+    	Unsplash (unsplash.com)
 
-	Icons:
-		Font Awesome (fontawesome.io)
+    Icons:
+    	Font Awesome (fontawesome.io)
 
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
-		Webpack config (https://github.com/antmelnyk/simple_webpack_boilerplate)
-		Postcss config (https://github.com/antmelnyk/simple_webpack_boilerplate)
+    Other:
+    	jQuery (jquery.com)
+    	Responsive Tools (github.com/ajlkn/responsive-tools)

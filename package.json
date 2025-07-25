@@ -4,24 +4,25 @@
     "description": "Professional website of Reuben Bradley",
     "author": "Reuben Bradley <reuben.m.bradley@gmail.com>",
     "private": true,
+    "type": "module",
+    "browserslist": [
+        "last 2 versions",
+        "not dead"
+    ],
     "scripts": {
-        "build": "webpack --config webpack.config.js",
-        "start": "webpack serve"
+        "build": "gulp build"
     },
     "devDependencies": {
-        "@babel/core": "^7.26.0",
-        "@babel/preset-env": "^7.26.0",
+        "@babel/core": "^7.28.0",
+        "@babel/preset-env": "^7.28.0",
+        "@babel/register": "^7.27.1",
         "autoprefixer": "^10.4.20",
         "babel-loader": "^9.2.1",
-        "css-loader": "^7.1.2",
-        "cssnano": "^7.0.6",
-        "html-webpack-plugin": "^5.6.3",
-        "mini-css-extract-plugin": "^2.9.2",
-        "postcss-loader": "^8.1.1",
-        "sass": "^1.81.0",
-        "sass-loader": "^16.0.3",
-        "webpack": "^5.96.1",
-        "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^5.1.0"
+        "browser-sync": "^3.0.4",
+        "gulp": "^5.0.1",
+        "gulp-autoprefixer": "^9.0.0",
+        "gulp-sass": "^6.0.1",
+        "gulp-sourcemaps": "^3.0.0",
+        "sass": "^1.81.0"
     }
 }
