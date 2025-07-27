@@ -21,6 +21,10 @@ const paths = {
     src: './src/images/**',
     dest: './dist/images',
   },
+  fonts: {
+    src: './src/assets/webfonts/**/*',
+    dest: './dist/webfonts',
+  },
   scripts: {
     src: './src/assets/js/**/*.js',
     dest: './dist/js',
@@ -51,6 +55,11 @@ function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
+function fonts() {
+  return gulp.src(paths.fonts.src, { encoding: false })
+    .pipe(gulp.dest(paths.fonts.dest));
+}
+
 function javascript() {
   return gulp.src(paths.scripts.src)
     .pipe(gulp.dest(paths.scripts.dest));
@@ -71,22 +80,22 @@ function bsReload(done) {
   done();
 }
 
-const build = gulp.parallel(html, styles, images, javascript);
+const build = gulp.parallel(html, styles, images, fonts, javascript);
 
 const buildClean = gulp.series(clean, build);
 
 function watch() {
     gulp.watch(
-      [paths.styles.src, paths.scripts.src, paths.images.src],
-      gulp.parallel(styles, javascript, images)
+      [paths.styles.src, paths.scripts.src, paths.images.src, paths.fonts.src],
+      gulp.parallel(styles, javascript, images, fonts)
     );
 }
 
 function bsWatch() {
   gulp.watch(paths.html.src, gulp.series(html, bsReload));
   gulp.watch(
-    [paths.styles.src, paths.scripts.src, paths.images.src],
-    gulp.series(gulp.parallel(styles, javascript, images), bsReload)
+    [paths.styles.src, paths.scripts.src, paths.images.src, paths.fonts.src],
+    gulp.series(gulp.parallel(styles, javascript, images, fonts), bsReload)
   );
 }
 
