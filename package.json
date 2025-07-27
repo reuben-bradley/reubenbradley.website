@@ -10,7 +10,9 @@
         "not dead"
     ],
     "scripts": {
-        "build": "gulp build"
+        "build-clean": "gulp buildClean",
+        "build": "gulp build",
+        "serve": "gulp serve"
     },
     "devDependencies": {
         "@babel/core": "^7.28.0",
@@ -19,8 +21,10 @@
         "autoprefixer": "^10.4.20",
         "babel-loader": "^9.2.1",
         "browser-sync": "^3.0.4",
+        "del": "^8.0.0",
         "gulp": "^5.0.1",
         "gulp-autoprefixer": "^9.0.0",
+        "gulp-concat": "^2.6.1",
         "gulp-sass": "^6.0.1",
         "gulp-sourcemaps": "^3.0.0",
         "sass": "^1.81.0"
