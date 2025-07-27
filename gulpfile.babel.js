@@ -92,5 +92,5 @@ function bsWatch() {
 
 const serve = gulp.series(build, bsInit, bsWatch);
 
-export { buildClean, build, watch, serve, styles };
+export { buildClean, build, watch, serve };
 export default build;
