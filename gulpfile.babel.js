@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import autoPrefixer from 'gulp-autoprefixer';
 import gulpSass from 'gulp-sass';
+import replace from 'gulp-replace';
 import * as dartSass from 'sass';
 import { deleteAsync } from 'del';
 import browserSync from 'browser-sync';
@@ -38,6 +39,7 @@ async function clean(done) {
 
 function html() {
   return gulp.src(paths.html.src)
+    .pipe(replace('%%copyyear%%', (new Date()).getFullYear()))
     .pipe(gulp.dest(paths.html.dest));
 }
 
