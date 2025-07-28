@@ -498,6 +498,17 @@ header {
 
 /* Form */
 
+.sweet-vessel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1000;
+}
+
 form {
   margin: 0 0 functions.size(element-margin) 0;
 }
@@ -897,9 +908,9 @@ ul.labeled-icons {
   padding: 0;
 
   li {
-    line-height: 1.75em;
-    margin: 1.5em 0 0 0;
-    padding-left: 2.25em;
+    line-height: 2.5em;
+    margin: 0.8em 0 0 1em;
+    padding-left: 3em;
     position: relative;
 
     &:first-child {
@@ -916,7 +927,8 @@ ul.labeled-icons {
       position: absolute;
       text-align: center;
       top: 0;
-      width: 1em;
+      width: 1.2em;
+      font-size: 1.8em;
     }
   }
 }
@@ -1315,7 +1327,7 @@ input[type="button"],
 
 /* Main */
 
-#main {
+main {
   margin-left: $size-header-width;
   max-width: 50em + $size-header-pad;
   padding: ($size-header-pad * 2) $size-header-pad $size-header-pad
