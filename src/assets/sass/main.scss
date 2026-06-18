@@ -729,6 +729,7 @@ svg.icon {
 .icons {
   svg.icon {
     font-size: 1.7rem;
+    filter: drop-shadow(0 0 3px functions.palette(accent2, border2-bg));
   }
 }
 
@@ -1313,6 +1314,7 @@ input[type="button"],
     list-style: none;
     margin: (functions.size(element-margin) * 0.5) 0 0 0;
     padding: 0;
+    text-shadow: 0 0 3px functions.palette(accent2, border2-bg);
 
     li {
       border-left: solid 1px functions.palette(accent2, border);
