@@ -48,7 +48,7 @@ $palette: (
     bg: #49bf9d,
     fg: color.mix(#49bf9d, #ffffff, 25%),
     fg-bold: #ffffff,
-    fg-light: color.mix(#49bf9d, #ffffff, 40%),
+    fg-light: color.mix(#49bf9d, #ffffff, 60%),
     border: rgba(255, 255, 255, 0.25),
     border-bg: rgba(255, 255, 255, 0.075),
     border2: rgba(255, 255, 255, 0.5),
@@ -56,10 +56,10 @@ $palette: (
   ),
 
   accent2: (
-    bg: #1f1815,
-    fg: rgba(255, 255, 255, 0.5),
+    bg: #4b706a,
+    fg: rgba(255, 255, 255, 0.8),
     fg-bold: #ffffff,
-    fg-light: rgba(255, 255, 255, 0.4),
+    fg-light: rgba(255, 255, 255, 0.6),
     border: rgba(255, 255, 255, 0.25),
     border-bg: rgba(255, 255, 255, 0.075),
     border2: rgba(255, 255, 255, 0.5),
