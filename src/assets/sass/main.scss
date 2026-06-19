@@ -229,7 +229,8 @@ body {
 body,
 input,
 select,
-textarea {
+textarea,
+button {
   color: functions.palette(fg);
   font-family: functions.font(family);
   font-size: 16pt;
