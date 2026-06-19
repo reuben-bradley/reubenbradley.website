@@ -1850,7 +1850,7 @@ $transition: 0.5s;
   &::before {
     content: "";
     position: absolute;
-    top: $cornerSize / 4;
+    top: calc($cornerSize / 4);
     right: $cornerSize + 5;
     background: url('/images/see-source.png') no-repeat center center / contain;
     height: 2rem;
