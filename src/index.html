@@ -25,7 +25,7 @@
   </head>
   <body class="is-preload">
     <!-- Peek under the hood -->
-    <a href="https://github.com/reuben-bradley/reubenbradley.website" class="corner-peek" title="See the sourcecode for this site!"></a>
+    <a href="https://github.com/reuben-bradley/reubenbradley.website" class="corner-peek" title="See the sourcecode for this site!" target="_blank"></a>
 
     <!-- Header -->
     <header id="header">
@@ -248,7 +248,7 @@
             <div class="caption">
               <h3>Digimancers</h3>
               <p>Built around the theme of "ritual", two players connect via mobile device and battle with hand-drawn spells!</p>
-              <a href="https://v3.globalgamejam.org/2016/games/digimancers">Game Jam Submission</a>
+              <a href="https://v3.globalgamejam.org/2016/games/digimancers" target="_blank">Game Jam Submission</a>
             </div>
           </article>
           <article class="col-6 col-12-xsmall work-item">
@@ -258,7 +258,7 @@
             <div class="caption">
               <h3>Fathom</h3>
               <p>Web-based VR concept game where players must work together to assist a survivor blindly navigate safely to the exit.</p>
-              <a href="https://v3.globalgamejam.org/2017/games/fathom">Game Jam Submission</a>
+              <a href="https://v3.globalgamejam.org/2017/games/fathom" target="_blank">Game Jam Submission</a>
             </div>
           </article>
           <article class="col-6 col-12-xsmall work-item">
@@ -268,7 +268,7 @@
             <div class="caption">
               <h3>ISeekU</h3>
               <p>A fake chat/IM-based browser game where players are given puzzles to solve, after being "activated" as a sleeper agent.</p>
-              <a href="https://v3.globalgamejam.org/2018/games/i-seek-u">Game Jam Submission</a>
+              <a href="https://v3.globalgamejam.org/2018/games/i-seek-u" target="_blank">Game Jam Submission</a>
             </div>
           </article>
         </div>
@@ -282,7 +282,7 @@
             <div class="caption">
               <h3>KittySweeper</h3>
               <p>Minesweeper clone written in vanilla JavaScript, where you try to uncover cats without "stepping" on them.</p>
-              <a href="https://kittysweeper.reubenbradley.website/">Play it here</a>
+              <a href="https://kittysweeper.reubenbradley.website/" target="_blank">Play it here</a>
             </div>
           </article>
           <article class="col-6 col-12-xsmall work-item">
@@ -292,7 +292,7 @@
             <div class="caption">
               <h3>Drag and Drop Puzzle</h3>
               <p>Simple puzzle written in vanilla JavaScript. Drag and drop the puzzle pieces onto their correct positions in the grid.</p>
-              <a href="https://puzzle.reubenbradley.website/">Play it here</a>
+              <a href="https://puzzle.reubenbradley.website/" target="_blank">Play it here</a>
             </div>
           </article>
         </div>
@@ -313,8 +313,9 @@
         </p>
         <div class="row">
           <div class="col-12">
-            <form method="post" action="#">
-              <div class="row gtr-uniform gtr-50">
+            <form method="POST" action="https://api.web3forms.com/submit">
+              <input type="hidden" name="access_key" value="a05a2913-bddb-4829-8aa4-3c8b1a61b2d9" />
+              <div class="row gtr-uniform gtr-50 form-fields">
                 <div class="col-6 col-12-xsmall">
                   <input
                     type="text"
@@ -352,10 +353,13 @@
                   ></textarea>
                 </div>
               </div>
+              <ul class="actions">
+                <li><button type="submit">Send Message</button></li>
+              </ul>
+              <div class="results-wrapper">
+                <div id="form-results" class="form-results">Please wait ...</div>
+              </div>
             </form>
-            <ul class="actions">
-              <li><input type="submit" value="Send Message" /></li>
-            </ul>
           </div>
         </div>
       </section>

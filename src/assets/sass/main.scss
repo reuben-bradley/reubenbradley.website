@@ -254,6 +254,18 @@ a {
     color: functions.palette(accent1, bg) !important;
     text-decoration: none;
   }
+
+  /* Show icon for external links */
+  &[target=_blank]:not(.corner-peek)::after {
+    content: "";
+    display: inline-block;
+    background-color: functions.palette(accent1, bg);
+    mask: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22currentColor%22%3E%3Cpath%20d%3D%22M10%206V8H5V19H16V14H18V20C18%2020.5523%2017.5523%2021%2017%2021H4C3.44772%2021%203%2020.5523%203%2020V7C3%206.44772%203.44772%206%204%206H10ZM21%203V11H19L18.9999%206.413L11.2071%2014.2071L9.79289%2012.7929L17.5849%205H13V3H21Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+    color: functions.palette(accent1, bg);
+    width: 1em;
+    height: 1em;
+    margin-left: functions.size(border-radius);
+  }
 }
 
 strong,
@@ -508,7 +520,7 @@ header {
   z-index: -1000;
 }
 
-form {
+.form-fields {
   margin: 0 0 functions.size(element-margin) 0;
 }
 
@@ -535,9 +547,15 @@ textarea {
   padding: 0 0.75em;
   text-decoration: none;
   width: 100%;
+  transition: border-color 0.5s;
 
-  &:invalid {
+  &.touched:invalid {
+    border-color: functions.palette(error);
     box-shadow: none;
+
+    &:focus {
+      border-color: functions.palette(accent1, error);
+    }
   }
 
   &:focus {
@@ -671,6 +689,47 @@ input[type="radio"] {
   color: functions.palette(fg-light) !important;
   opacity: 1;
 }
+
+/* Additional Styling for form interactive bits  -- Reuben */
+form {
+  position: relative;
+
+  .results-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    &.show {
+      display: flex;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: functions.palette(black);
+      border-radius: functions.size(border-radius);
+      opacity: 0.4;
+    }
+
+    .form-results {
+      background: functions.palette(bg);
+      border-radius: functions.size(border-radius);
+      padding: calc(functions.size(element-margin) / 2) functions.size(element-margin);
+      z-index: 5;
+    }
+  }
+}
+
 
 /* Box */
 
@@ -1120,6 +1179,7 @@ table {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
+button,
 .button {
   @include vendor.vendor("appearance", "none");
   @include vendor.vendor(
