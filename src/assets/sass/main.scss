@@ -1376,7 +1376,7 @@ main {
   border-radius: functions.size(border-radius);
   box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  padding-bottom: 3em;
+  max-width: 740px;
 
   .loader {
     @include vendor.vendor("animation", "spin 1s linear infinite");
@@ -1392,13 +1392,13 @@ main {
 
   .caption {
     background: #fff;
-    bottom: 0;
+    // bottom: 0;
     cursor: default;
     font-size: 0.9em;
     // height: 3em;
-    left: 0;
-    line-height: 2.8em;
-    position: absolute;
+    // left: 0;
+    // line-height: 2.8em;
+    // position: absolute;
     text-align: center;
     width: 100%;
     z-index: 1;
@@ -1768,6 +1768,10 @@ body.is-touch {
     > section {
       margin: ($size-header-pad * 1.5) 0 0 0;
       padding: ($size-header-pad * 1.5) 0 0 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
 
@@ -1813,6 +1817,76 @@ body.is-touch {
         margin-left: 0;
         padding-left: 0;
       }
+    }
+  }
+}
+
+/**
+ *  Based on the "Corner Peel" CodePen by Benjamin Wells Kerenza
+ *  https://codepen.io/bjwells/pen/ZYPpyX
+ *
+ *  Adapted for use by Reuben Bradley
+ */
+
+$cornerSize: 50px;
+$transition: 0.5s;
+
+.corner-peek {
+  border: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: $cornerSize;
+  width: $cornerSize;
+  cursor: pointer;
+  transition: $transition;
+  background: linear-gradient(to top right, functions.palette(accent1, bg) 35%, functions.palette(accent2, bg) 60%, functions.palette(black) 90%);
+  background-size: $cornerSize * 2, $cornerSize * 2;
+  background-position: top right;
+  box-shadow: 0 0 5px functions.palette(black);
+  z-index: 999;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: $cornerSize / 4;
+    right: $cornerSize + 5;
+    background: url('/images/see-source.png') no-repeat center center / contain;
+    height: 2rem;
+    width: 14rem;
+    z-index: 1000;
+
+    @include bp.breakpoint("<=medium") {
+      width: 11rem;
+      filter: saturate(0) invert(100%) brightness(100);
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $cornerSize * -0.7;
+    right: $cornerSize * -0.7;
+    height: $cornerSize * 1.4;
+    width: $cornerSize * 1.4;
+    transition: $transition;
+    transform: rotate(45deg);
+    background: #333333;
+  }
+
+  &:hover {
+    height: $cornerSize * 1.3;
+    width: $cornerSize * 1.3;
+    background-position: bottom left;
+    box-shadow: 0 0 18px functions.palette(black);
+
+    &::after {
+      height: $cornerSize * 1.8;
+      width: $cornerSize * 1.8;
+      top: $cornerSize * -0.9;
+      right: $cornerSize * -0.9;
     }
   }
 }

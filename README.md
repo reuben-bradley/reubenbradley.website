@@ -14,6 +14,7 @@ Credits:
         TypeScript Icon [www.typescriptlang.org/](https://www.typescriptlang.org/)
         Webpack Icon [webpack.js.org](https://webpack.js.org)
         Vite Icon [vite.dev](https://vite.dev)
+        Handy Arrows [handy-arrows](https://github.com/Eronred/handy-arrows)
 
     Other:
         jQuery [jquery.com](https://jquery.com)
